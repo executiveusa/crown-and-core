@@ -1,0 +1,1 @@
+const removeNetlifyHud=()=>{document.querySelectorAll('#nl-badge-frame,script[src*="/.netlify/scripts/hud"]').forEach(node=>node.remove())};removeNetlifyHud();const observer=new MutationObserver(removeNetlifyHud);observer.observe(document.documentElement,{childList:true,subtree:true});setTimeout(()=>observer.disconnect(),15000);
