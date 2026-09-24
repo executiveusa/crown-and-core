@@ -30,3 +30,63 @@
     margin-bottom:clamp(6px,2cqi,12px)!important;
   }
 }
+
+
+/* Final cover lockup — emblem + supplied wordmark */
+.crown-cover{
+  justify-content:center!important;
+  padding:10% 8% 9%!important;
+  gap:0!important;
+  transform:translateY(-2%);
+}
+.crown-cover-mark{
+  width:clamp(112px,28cqi,158px)!important;
+  max-width:158px!important;
+  max-height:22%!important;
+  height:auto!important;
+  margin:0 auto clamp(18px,3.4cqi,28px)!important;
+}
+.crown-cover-wordmark{
+  display:block;
+  width:min(84%,430px);
+  max-width:430px;
+  max-height:11%;
+  height:auto;
+  object-fit:contain;
+  margin:0 auto;
+}
+.cover-subtitle{
+  margin:clamp(20px,4cqi,30px) 0 0!important;
+  font-size:clamp(9px,1.8cqi,12px)!important;
+  letter-spacing:.28em!important;
+}
+@media(max-width:760px),(orientation:portrait){
+  .crown-cover{
+    padding:9% 8% 8%!important;
+    transform:translateY(-1.5%);
+  }
+  .crown-cover-mark{
+    width:clamp(104px,31cqi,132px)!important;
+    max-width:132px!important;
+    max-height:20%!important;
+    margin-bottom:clamp(15px,4cqi,22px)!important;
+  }
+  .crown-cover-wordmark{
+    width:min(86%,340px);
+    max-width:340px;
+    max-height:10%;
+  }
+  .cover-subtitle{
+    margin-top:clamp(18px,5cqi,24px)!important;
+  }
+}
+@media(max-width:390px){
+  .crown-cover-mark{
+    width:112px!important;
+    max-width:112px!important;
+  }
+  .crown-cover-wordmark{
+    width:88%;
+    max-width:300px;
+  }
+}
