@@ -29,7 +29,13 @@ const getAgreement=async()=>{
   if(agreementData)return agreementData;
   setAgreementLoading(true);
   try{
-    const data=await loadAgreement();
+    const raw=await loadAgreement();
+    const data={...raw,blocks:(raw.blocks||[]).map(block=>{
+      if(block.type!=='p')return block;
+      if(block.text==='90-DAY PROPOSAL')return {...block,text:'FINAL AGREEMENT · REVISION 01'};
+      if(block.text==='90-Day Professional Services Proposal')return {...block,text:'90-Day Professional Services Agreement'};
+      return block;
+    })};
     setAgreementData(data);
     return data;
   }finally{setAgreementLoading(false)}
