@@ -1,0 +1,15 @@
+{
+  "name": "crown-and-core-flipbook",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "format": "prettier --write .",
+    "format:check": "prettier --check ."
+  },
+  "dependencies": {
+    "@chenglou/pretext": "0.0.9"
+  },
+  "devDependencies": {
+    "prettier": "^3.0.0"
+  }
+}
