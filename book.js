@@ -41,7 +41,7 @@ const downloadPDF=async()=>{try{
     writeLines(s.title,22,27,true);y+=8;
     for(const para of s.text.split(/\\n+/).map(x=>x.trim()).filter(Boolean)){writeLines(para,11,16,false);y+=7}
   }
-  doc.save('Crown_Core_90_Day_Proposal.pdf');
+  doc.save('Crown_Core_90_Day_Agreement_FINAL_REVISION_01_2026-10-01.pdf');
 }catch(err){console.error(err);alert('PDF download could not be created. Please try again.')}};
 
 const downloadWord=async()=>{try{
@@ -55,14 +55,14 @@ const downloadWord=async()=>{try{
       children.push(new Paragraph({children:[new TextRun({text:para,size:22})],spacing:{after:120,line:300}}));
     }
   }
-  const doc=new Document({creator:'MACS Digital Media',title:'Crown & Core - 90-Day Proposal',sections:[{properties:{},children}]});
+  const doc=new Document({creator:'MACS Digital Media',title:'Crown & Core - 90-Day Agreement - Final Revision 01',sections:[{properties:{},children}]});
   const blob=await Packer.toBlob(doc);
-  const url=URL.createObjectURL(blob);const a=document.createElement('a');a.href=url;a.download='Crown_Core_90_Day_Proposal.docx';document.body.appendChild(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(url),1500);
+  const url=URL.createObjectURL(blob);const a=document.createElement('a');a.href=url;a.download='Crown_Core_90_Day_Agreement_FINAL_REVISION_01_2026-10-01.docx';document.body.appendChild(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(url),1500);
 }catch(err){console.error(err);alert('Word download could not be created. Please try again.')}};
 const readPage=pages[current];
 return React.createElement('main',{className:'reading-room'},
 React.createElement('div',{className:'ambient-light','aria-hidden':'true'}),
-React.createElement('header',{className:'reader-bar'},React.createElement('button',{className:'wordmark',onClick:()=>go(0)},'CROWN & CORE'),React.createElement('div',{className:'reader-actions'},React.createElement('button',{onClick:()=>setToc(v=>!v),'aria-expanded':toc},'Contents'),React.createElement('button',{onClick:()=>setRead(true)},'Read'),React.createElement('button',{onClick:()=>setSound(v=>!v),'aria-pressed':sound},sound?'Sound On':'Sound Off'))),
+React.createElement('header',{className:'reader-bar'},React.createElement('button',{className:'wordmark',onClick:()=>go(0)},'CROWN & CORE'),React.createElement('div',{className:'reader-actions'},React.createElement('button',{onClick:()=>setToc(v=>!v),'aria-expanded':toc},'Contents'),React.createElement('button',{onClick:()=>setRead(true)},'Read'),React.createElement('span',{className:'mobile-read-label'},'Best on phone'),React.createElement('button',{onClick:()=>setSound(v=>!v),'aria-pressed':sound},sound?'Sound On':'Sound Off'))),
 React.createElement('section',{className:'book-stage','aria-label':'Interactive proposal'},React.createElement('button',{className:'side-turn side-turn-prev',onClick:()=>ref.current?.pageFlip().flipPrev(),disabled:current===0,'aria-label':'Previous page'},'‹'),React.createElement(HTMLFlipBook,{ref,width:620,height:820,size:'stretch',minWidth:300,maxWidth:700,minHeight:420,maxHeight:930,showCover:true,usePortrait:true,drawShadow:true,flippingTime:650,maxShadowOpacity:.24,mobileScrollSupport:true,clickEventForward:true,useMouseEvents:true,swipeDistance:22,showPageCorners:true,disableFlipByClick:false,className:'flip-book',onFlip},pages.map((p,i)=>React.createElement(Page,{key:i,page:p,index:i}))),React.createElement('button',{className:'side-turn side-turn-next',onClick:()=>ref.current?.pageFlip().flipNext(),disabled:current>=pages.length-1,'aria-label':'Next page'},'›')),
 React.createElement('footer',{className:'reader-footer'},React.createElement('span',null,`${current+1} / ${pages.length}`),React.createElement('div',{className:'download-links'},React.createElement('button',{onClick:downloadPDF},'PDF'),React.createElement('button',{onClick:downloadWord},'Word'))),
 toc&&React.createElement('aside',{className:'toc-drawer','aria-label':'Contents'},React.createElement('div',{className:'drawer-heading'},React.createElement('strong',null,'Contents'),React.createElement('button',{onClick:()=>setToc(false),'aria-label':'Close contents'},'×')),['The 90-Day Plan','Google & Local Search','Brand Voice, Content & Social','Systems, Automation & Data','Main Offers','Video Production','Assets Crown & Core Keeps','What Happens Each Month','What We Need From You','What We Will Not Do','What Success Looks Like','MAXX Circle™','Investment','Our Delivery Guarantee','Ownership','If You’re Not Against Moving Forward','Agreement Parties'].map(name=>{const i=pages.findIndex(p=>p.title===name);return React.createElement('button',{key:name,onClick:()=>go(i)},React.createElement('span',null,String(i).padStart(2,'0')),React.createElement('b',null,name))})),

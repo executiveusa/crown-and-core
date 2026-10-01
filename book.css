@@ -80,3 +80,17 @@ button:focus-visible,a:focus-visible{outline:2px solid #fff;outline-offset:3px}
   .crown-cover-mark{width:72%;max-width:300px;max-height:17%;margin-bottom:24px}.crown-cover-wordmark{width:82%;max-width:330px}.cover-subtitle{margin-top:30px}
 }
 @media(prefers-reduced-motion:reduce){.flip-book{transition:none!important}.side-turn{transition:none!important}}
+
+
+/* Revision 01 mobile reading polish */
+.mobile-read-label{display:none;color:rgba(255,255,255,.52);font-size:9px;letter-spacing:.06em}
+.read-copy{font-size:calc(18px * var(--text-scale));line-height:1.66}
+.read-copy p{margin-bottom:1em}
+@media(max-width:760px),(orientation:portrait){
+  .reader-actions button:nth-child(2){background:#f3eee5;color:#111;border-radius:999px;padding-inline:13px;font-weight:700}
+  .mobile-read-label{display:inline;font-size:8px;max-width:52px;line-height:1.2;text-align:center}
+  .read-panel{border-radius:0;width:100%;max-height:100svh;min-height:100svh;padding:18px 22px calc(34px + env(safe-area-inset-bottom))}
+  .read-toolbar{top:-18px;margin:-18px -22px 24px;padding:10px 22px}
+  .read-title{font-size:calc(32px * var(--text-scale));line-height:1.08}
+  .read-copy{font-size:calc(18.5px * var(--text-scale));line-height:1.68}
+}
