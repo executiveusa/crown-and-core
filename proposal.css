@@ -86,3 +86,9 @@ p{margin:0 0 14px}.lead-copy{font:400 clamp(18px,3cqi,23px)/1.4 var(--display);c
   .book-page[data-text-fit="dense"] p,
   .book-page[data-text-fit="dense"] li{font-size:clamp(13.5px,3.5cqi,15px);line-height:1.47}
 }
+
+
+/* Agreement execution */
+.signature-grid{margin-top:10px;gap:22px}
+.signature-grid>div{padding-top:16px}
+.signature-grid p{margin:0 0 12px;font-size:clamp(11.5px,1.9cqi,13.5px);line-height:1.45}
