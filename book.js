@@ -133,7 +133,7 @@ agreementOpen&&React.createElement('div',{className:'read-modal agreement-modal'
     agreementData&&React.createElement('article',{className:'agreement-document'},agreementData.blocks.map((b,i)=>React.createElement(AgreementBlock,{block:b,index:i,key:i}))),
     React.createElement('div',{className:'agreement-download-bar'},React.createElement('button',{onClick:downloadPDF},'Download PDF'),React.createElement('button',{onClick:downloadWord},'Download Word'))
   )
-))));
+)));
 }
 
 createRoot(document.getElementById('root')).render(React.createElement(App));
