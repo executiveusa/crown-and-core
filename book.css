@@ -7,8 +7,8 @@
   --muted:#6f6b65;
   --silver:#b9b9b2;
   --white:#fff;
-  --display:"Newsreader",Georgia,"Times New Roman",serif;
-  --sans:"Manrope",Arial,Helvetica,system-ui,sans-serif;
+  --display:"Iowan Old Style","Palatino Linotype",Palatino,Georgia,"Times New Roman",serif;
+  --sans:"Avenir Next",Avenir,"Segoe UI",Helvetica,Arial,system-ui,sans-serif;
   --champagne:#b5aa98;
 }
 *{box-sizing:border-box}
@@ -43,14 +43,14 @@ button:focus-visible,a:focus-visible{outline:2px solid #fff;outline-offset:3px}
 .cover{background:#050505!important;border-color:rgba(255,255,255,.16);box-shadow:inset 0 0 0 1px rgba(255,255,255,.025),inset 0 0 70px rgba(0,0,0,.75)!important}
 .cover .page-content{padding:0;display:block}
 .cover .page-content>div{display:block;height:100%}
-.cover-leather{position:absolute;inset:0;background:radial-gradient(circle at 50% 18%,rgba(255,255,255,.032),transparent 34%),linear-gradient(145deg,#11110f 0,#050505 46%,#090908 72%,#020202 100%)}
+.cover-leather{position:absolute;inset:0;background:radial-gradient(ellipse at 46% 20%,rgba(255,255,255,.026),transparent 38%),repeating-linear-gradient(92deg,rgba(255,255,255,.008) 0 1px,transparent 1px 4px),linear-gradient(145deg,#11110f 0,#050505 46%,#090908 72%,#020202 100%)}
 .cover-leather:after{content:"";position:absolute;inset:13px;border:1px solid rgba(181,170,152,.24);box-shadow:inset 0 0 0 4px rgba(0,0,0,.22),inset 0 0 58px rgba(0,0,0,.72);border-radius:3px 8px 8px 3px}
-.cover-tooling{position:absolute;inset:25px;border:1px solid rgba(181,170,152,.12);box-shadow:inset 0 0 0 1px rgba(255,255,255,.018)}
+.cover-tooling{position:absolute;inset:25px;border:1px solid rgba(145,136,122,.16);box-shadow:inset 1px 1px 0 rgba(255,255,255,.025),inset -1px -1px 0 rgba(0,0,0,.8),0 1px 0 rgba(255,255,255,.012)}
 .cover-composition{position:relative;z-index:2;width:100%;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:13% 9% 10%;gap:0;text-align:center}
-.crown-cover-mark{display:block;width:min(72%,390px);max-width:390px;max-height:18%;height:auto;object-fit:contain;margin:0 auto clamp(24px,4.5cqi,36px);filter:brightness(0) invert(1) opacity(.96) drop-shadow(0 10px 26px rgba(0,0,0,.38))}
-.crown-cover-wordmark{display:block;width:min(78%,440px);max-width:440px;max-height:12%;height:auto;object-fit:contain;margin:0 auto;filter:brightness(0) invert(1) opacity(.92)}
-.cover-subtitle{margin:clamp(28px,5.2cqi,42px) 0 0;color:rgba(232,225,214,.72);font-size:clamp(9px,1.7cqi,11px);font-weight:600;letter-spacing:.3em;text-transform:uppercase}
-.cover-credit{margin:16px 0 0;color:rgba(232,225,214,.42);font-size:9px;font-weight:500;letter-spacing:.16em;text-transform:uppercase}
+.crown-cover-mark{display:block;width:min(72%,390px);max-width:390px;max-height:18%;height:auto;object-fit:contain;margin:0 auto clamp(24px,4.5cqi,36px);filter:brightness(0) invert(1) sepia(.06) opacity(.34) drop-shadow(-1px -1px 0 rgba(255,255,255,.16)) drop-shadow(1.5px 2px 1px rgba(0,0,0,.95))}
+.crown-cover-wordmark{display:block;width:min(78%,440px);max-width:440px;max-height:12%;height:auto;object-fit:contain;margin:0 auto;filter:brightness(0) invert(1) sepia(.06) opacity(.4) drop-shadow(-1px -1px 0 rgba(255,255,255,.14)) drop-shadow(1.5px 2px 1px rgba(0,0,0,.95))}
+.cover-subtitle{margin:clamp(28px,5.2cqi,42px) 0 0;color:rgba(205,197,184,.6);text-shadow:-1px -1px 0 rgba(255,255,255,.035),1px 1px 0 #000;font-size:clamp(9px,1.7cqi,11px);font-weight:600;letter-spacing:.3em;text-transform:uppercase}
+.cover-credit{margin:16px 0 0;color:rgba(205,197,184,.38);text-shadow:1px 1px 0 #000;font-size:9px;font-weight:500;letter-spacing:.16em;text-transform:uppercase}
 .closing .back-thanks{margin:32px 0 0;color:#f4efe6;font:400 clamp(28px,6cqi,44px)/1.05 var(--display)}
 .side-turn{position:absolute;z-index:50;top:50%;transform:translateY(-50%);width:48px;height:72px;border:0;background:rgba(0,0,0,.24);color:rgba(255,255,255,.76);font-size:24px;border-radius:8px}
 .side-turn:disabled{opacity:.18;cursor:default}.side-turn-prev{left:-1px}.side-turn-next{right:-1px}

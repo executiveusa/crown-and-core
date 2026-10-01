@@ -1,50 +1,12 @@
 import React,{forwardRef,useCallback,useEffect,useImperativeHandle,useRef,useState}from'react';
 import{createRoot}from'react-dom/client';
 import HTMLFlipBook from'react-pageflip';
-import{prepare,layout}from'@chenglou/pretext';
-
 import{pages}from'./proposal-data.js';
-
-const stripHtml=html=>html.replace(/<script[\\s\\S]*?<\\/script>/gi,' ').replace(/<style[\\s\\S]*?<\\/style>/gi,' ').replace(/<[^>]+>/g,' ').replace(/&amp;/g,'&').replace(/&nbsp;/g,' ').replace(/\\s+/g,' ').trim();
 
 const Page=forwardRef(function Page({page,index},ref){
   const r=useRef(null);
-  const[fit,setFit]=useState('standard');
   useImperativeHandle(ref,()=>r.current);
-
-  useEffect(()=>{
-    if(page.kind.includes('cover'))return;
-    const el=r.current;
-    if(!el)return;
-    let cancelled=false;
-    const evaluate=()=>{
-      if(cancelled||!el)return;
-      const width=el.clientWidth;
-      const height=el.clientHeight;
-      if(!width||!height)return;
-      const text=[page.kicker||'',page.title,stripHtml(page.html)].join(' ');
-      const bodyPx=Math.max(13,Math.min(15.5,width*.024));
-      const linePx=bodyPx*1.52;
-      const availableWidth=Math.max(180,width-Math.max(44,width*.12));
-      const availableHeight=Math.max(220,height-Math.max(150,height*.23));
-      try{
-        const prepared=prepare(text,`${bodyPx}px Manrope`);
-        const measured=layout(prepared,availableWidth,linePx);
-        const ratio=measured.height/availableHeight;
-        const next=ratio>1.22?'dense':ratio>1.02?'compact':ratio<.58?'airy':'standard';
-        setFit(next);
-      }catch{
-        setFit('standard');
-      }
-    };
-    const run=()=>document.fonts?.ready?document.fonts.ready.then(evaluate):evaluate();
-    run();
-    const ro=new ResizeObserver(evaluate);
-    ro.observe(el);
-    return()=>{cancelled=true;ro.disconnect()};
-  },[page]);
-
-  return React.createElement('article',{ref:r,className:`book-page ${page.kind}`,'data-text-fit':fit,'aria-label':page.title},
+  return React.createElement('article',{ref:r,className:`book-page ${page.kind}`,'aria-label':page.title},
     React.createElement('div',{className:'paper-grain','aria-hidden':'true'}),
     React.createElement('div',{className:'page-content'},
       page.kicker&&React.createElement('p',{className:'kicker'},page.kicker),
