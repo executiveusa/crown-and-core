@@ -1,11 +1,13 @@
-# Crown & Core condensed v2
+# Crown & Core 90-day proposal: interactive flipbook (v3)
 
-34-leaf current review edition, October 1, 2026. The root index.html is the current static flipbook. It loads bundle.js, page-images, fonts and styles. phone-reader.html supplies the offline text reader. Crown-Core-phone-review.pdf is the matching 34-page image PDF. Both selected font licenses are in assets/licenses.
+Static site. No build step. Root `index.html` is the book; `book.js` and `styles.css` run it; `phone-reader.html` is the single-file offline copy; `Crown-Core-phone-review.pdf` is the matching PDF. Fonts (Libre Caslon Text, Inter) and licenses are in `assets/`.
 
-This update is an additional GitHub/Vercel home. Existing sslip.io routes must remain untouched. Do not deploy private extracted Why material or the letter handoff.
+Live (Netlify): https://crownandcore.netlify.app
 
-Production source content is proposal-data.js. The present bundle also embeds that data; changing only proposal-data.js will not update the primary flipbook until the runtime bundle is regenerated. This package preserves the exact current v2 runtime, not a newly designed edition. Primary page artwork and offline/PDF outputs must be regenerated together when content changes.
+Copy is locked. Changes go through the owner. Binding terms (guarantee, 7-day approval window, payment schedule, signature page) need MACS / attorney confirmation before editing.
 
-The earlier book.js and agreement-data.js are legacy files and are not loaded by the current index.html. Previous Git commits preserve the original edition.
+Signing: the sign block is hidden until `<meta name="sign-url" content="...">` holds the DocuSign link. Until then the Talk to Us page (WhatsApp) is the contact path.
 
-Use the existing Vercel project prj_C8ilscnesSCZmiEPokL4OCeXzAL1, after verifying its current account, plan and Git settings. Static serving needs no paid service. Connect the main branch to production deployment. This update bundle does not itself establish that Vercel connection.
+The previous condensed v2 edition (bundle.js + page-images) is preserved in git history and on `archive/pre-final-proposal-2026-09-30`.
+
+Do not commit secrets. Do not deploy the private "Why" material or the letter handoff.
